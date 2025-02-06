@@ -1,0 +1,783 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 30px;
+}
+::-webkit-scrollbar-track {
+    background: #1A1A1D;
+    border-radius: 30px;
+}
+::-webkit-scrollbar-thumb {
+    background: #1d1d1a;
+    border-radius: 30px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #1d1d1a;
+    border-radius: 30px;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-size: 1rem;
+    margin: 0 auto;
+    background-color: #1A1A1D;
+    color: white;
+    overflow: hidden;
+}
+.index{
+    display: block;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    position: fixed;
+    top: 0;
+    left:0;
+    overflow: hidden;
+    transition: transform 1s ease-in-out;
+}
+.index-title{
+    font-family: "Kalam", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3.5rem;
+    width: fit-content;
+    margin: 100px auto;
+    color: white;
+    padding: 0rem clamp(1rem, 2vw, 3rem);
+    border-radius: clamp(0.4rem, 0.75vw, 1rem);
+}
+
+
+.index_b{
+    width: 20px;
+    margin: 200px auto;
+}
+.index_b_arrows
+{
+  display: block;
+  -ms-transform: rotate(45deg); /* IE 9 */
+  -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+  transform: rotate(45deg);
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  margin: 0 0 3px 4px;
+  width: 20px;
+  height: 20px;
+}
+.one
+{
+  margin-top: 1px;
+}
+
+.one, .two, .three
+{
+    -webkit-animation: arrow-anim 1s infinite;
+    -moz-animation: arrow-anim 1s infinite;
+    animation: arrow-anim 1s infinite;
+  
+}
+
+.one
+{
+  -webkit-animation-delay: .1s;
+  -moz-animation-delay: .1s;
+  -webkit-animation-direction: alternate;
+  
+  animation-direction: alternate;
+  animation-delay: alternate;
+}
+
+.two
+{
+  -webkit-animation-delay: .2s;
+  -moz-animation-delay: .2s;
+  -webkit-animation-direction: alternate;
+  
+  animation-delay: .2s;
+  animation-direction: alternate;
+  
+  margin-top: -6px;
+}
+
+.three
+{
+  -webkit-animation-delay: .3s;
+  -moz-animation-delay: .3s;
+  -webkit-animation-direction: alternate;
+  
+  animation-delay: .3s;
+  animation-direction: alternate;
+  
+  
+  margin-top: -6px;
+}
+@-webkit-keyframes arrow-anim {
+
+    0%   { opacity: 0;}
+    50%  { opacity: .5;}
+    100% { opacity: 1;}
+  }
+  @-moz-keyframes arrow-anim {
+  
+    0%   { opacity: 0; }
+    50%  { opacity: .5; }
+    100% { opacity: 1; }
+  }
+  @-o-keyframes arrow-anim {
+  
+    0%   { opacity: 0; }
+    50%  { opacity: .5; }
+    100% { opacity: 1; }
+  }
+  @keyframes arrow-anim {
+  
+    0%   { opacity: 0; }
+    50%  { opacity: .5; }
+    100% { opacity: 1; }
+  }
+  
+
+
+
+.skills_r {
+    position: absolute;
+    top: 50%;
+    left: 96.5%;
+    transform: translate(-50%, -50%);
+    transform: rotate(270deg);
+    cursor: pointer;
+}
+
+.skills_r span {
+    display: block;
+    width: 1vw;
+    height: 1vw;
+    border-bottom: 3px solid white;
+    border-right: 3px solid white;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+
+.skills_r span:nth-child(2) {
+    animation-delay: -0.2s;
+}
+
+.skills_r span:nth-child(3) {
+    animation-delay: -0.4s;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px, -20px);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: rotate(45deg) translate(20px, 20px);
+    }
+}
+
+.skills_l {
+    position: absolute;
+    top: 50%;
+    left: 3.5%;
+    transform: translate(-50%, -50%);
+    transform: rotate(90deg);
+    cursor: pointer;
+}
+
+.skills_l span {
+    display: block;
+    width: 1vw;
+    height: 1vw;
+    border-bottom: 3px solid white;
+    border-right: 3px solid white;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+
+.skills_l span:nth-child(2) {
+    animation-delay: -0.2s;
+}
+
+.skills_l span:nth-child(3) {
+    animation-delay: -0.4s;
+}
+
+.skills_u {
+    position: absolute;
+    top: 7%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform: rotate(180deg);
+    cursor: pointer;
+}
+
+.skills_u span {
+    display: block;
+    width: 1vw;
+    height: 1vw;
+    border-bottom: 3px solid white;
+    border-right: 3px solid white;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+
+.skills_u span:nth-child(2) {
+    animation-delay: -0.2s;
+}
+
+.skills_u span:nth-child(3) {
+    animation-delay: -0.4s;
+}
+
+
+
+.skills_b {
+    position: absolute;
+    top: 91.5%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+    transform: rotate(0deg);
+    cursor: pointer;
+}
+
+.skills_b span {
+    display: block;
+    width: 1vw;
+    height: 1vw;
+    border-bottom: 3px solid white;
+    border-right: 3px solid white;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+
+.skills_b span:nth-child(2) {
+    animation-delay: -0.2s;
+}
+
+.skills_b span:nth-child(3) {
+    animation-delay: -0.4s;
+}
+
+:root {  
+    --purple: rgb(123, 31, 162);
+    --violet: rgb(103, 58, 183);
+    --pink: rgb(244, 143, 177);
+}
+
+@keyframes background-pan {
+from {
+    background-position: 0% center;
+}
+
+to {
+    background-position: -200% center;
+}
+}
+  
+@keyframes scale {
+from, to {
+    transform: scale(0);
+}
+
+50% {
+    transform: scale(1);
+}
+}
+
+@keyframes rotate {
+from {
+    transform: rotate(0deg);
+}
+
+to {
+    transform: rotate(180deg);
+}
+}
+    
+.one-liner h1 {
+    color: white;
+    font-family: "Rubik", sans-serif;
+    font-size: clamp(2em, 2vw, 4em);
+    font-weight: 400;
+    margin: 0px;
+    padding: 20px;
+    text-align: center;
+}
+
+.one-liner h1 > .magic {
+    display: inline-block;
+    position: relative;
+}
+
+.one-liner h1 > .magic > .magic-text {
+    animation: background-pan 3s linear infinite;
+    background: linear-gradient(
+      to right,
+      var(--purple),
+      var(--violet),
+      var(--pink),
+      var(--purple)
+    );
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+}
+.skills{
+    display: block;
+    visibility: visible;
+    width: 100%;
+    height: 100vh;
+    position:absolute;
+    top: 100vh;
+    left: 0;
+    margin: 0 auto;
+    transition: transform 1s ease-in-out;
+    font-family: "Orbitron", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+.python{
+    display: flex;
+    flex-direction: wrap;
+    width: 375px;
+    justify-content: space-between;
+    margin: 200px 200px;
+}
+.html_css{
+    display: flex;
+    flex-direction: wrap;
+    width: 375px;
+    justify-content: space-between;
+    margin: -150px 200px;   
+}
+.cpp{
+    display: flex;
+    flex-direction: wrap;
+    width: 375px;
+    justify-content: space-between;
+    margin: 200px 200px;   
+}
+.js{
+    display: flex;
+    flex-direction: wrap;
+    width: 375px;
+    justify-content: space-between;
+    margin: -150px 200px; 
+}
+.gml{
+    display: flex;
+    flex-direction: wrap;
+    width: 375px;
+    justify-content: space-between;
+    margin: 200px 200px; 
+}
+.skill-bar{
+    width: 243px;
+    height: 20px;
+    border: 3px solid white;
+    display: flex;
+    flex-direction: row;
+}
+.bar-1{
+    width: 80px;
+    height: 16px;
+    border-right: 2.5px solid white;
+    z-index: -100;
+}
+.bar-2{
+    width: 80px;
+    height: 16px;
+    border-right: 2.5px solid white;
+    z-index: -100;
+}
+.bar-3{
+    width: 80px;
+    height: 16px;
+    z-index: -100;
+}
+.orange{
+    background-color:#FFD700 ;
+    width: 100%;
+    height: 100%;
+    z-index:0;
+}
+.green{
+    background-color: #32CD32;
+    width: 100%;
+    height: 100%;
+    z-index:0;
+}
+.purple{
+    background-color: #9B30FF;
+    width: 100%;
+    height: 100%;
+    z-index:0;
+}
+.skills img{
+    margin: -425px 800px;
+    z-index: 99999999999;
+}
+/* okay so the problem is with the top being displaced and the position being fixed, they both seem to be clashing. also try to download the font for it to work "offline". */
+
+.chess{
+    display: block;
+    visibility: visible;
+    width: 100%;
+    height: 100vh;
+    position:absolute;
+    top: 200vh;
+    left: 0;
+    margin: 0 auto;
+    transition: transform 1s ease-in-out;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+.chess_r {
+    position: absolute;
+    top: 50%;
+    left: 96.5%;
+    transform: translate(-50%, -50%);
+    transform: rotate(270deg);
+    cursor: pointer;
+}
+
+.chess_r span {
+    display: block;
+    width: 1vw;
+    height: 1vw;
+    border-bottom: 3px solid white;
+    border-right: 3px solid white;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+
+.chess_r span:nth-child(2) {
+    animation-delay: -0.2s;
+}
+
+.chess_r span:nth-child(3) {
+    animation-delay: -0.4s;
+}
+
+
+.chess_l {
+    position: absolute;
+    top: 50%;
+    left: 3.5%;
+    transform: translate(-50%, -50%);
+    transform: rotate(90deg);
+    cursor: pointer;
+}
+
+.chess_l span {
+    display: block;
+    width: 1vw;
+    height: 1vw;
+    border-bottom: 3px solid white;
+    border-right: 3px solid white;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+
+.chess_l span:nth-child(2) {
+    animation-delay: -0.2s;
+}
+
+.chess_l span:nth-child(3) {
+    animation-delay: -0.4s;
+}
+
+.chess_u {
+    position: absolute;
+    top: 7%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform: rotate(180deg);
+    cursor: pointer;
+}
+
+.chess_u span {
+    display: block;
+    width: 1vw;
+    height: 1vw;
+    border-bottom: 3px solid white;
+    border-right: 3px solid white;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+
+.chess_u span:nth-child(2) {
+    animation-delay: -0.2s;
+}
+
+.chess_u span:nth-child(3) {
+    animation-delay: -0.4s;
+}
+
+
+
+.chess_b {
+    position: absolute;
+    top: 91.5%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+    transform: rotate(0deg);
+    cursor: pointer;
+}
+
+.chess_b span {
+    display: block;
+    width: 1vw;
+    height: 1vw;
+    border-bottom: 3px solid white;
+    border-right: 3px solid white;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+
+.chess_b span:nth-child(2) {
+    animation-delay: -0.2s;
+}
+
+.chess_b span:nth-child(3) {
+    animation-delay: -0.4s;
+}
+.chess_container{
+    font-size: 2rem;
+    
+}
+.chessboard_container{
+    width: 500px;
+    height: 490px;
+    border-radius: 30px;
+    border: 3px white solid;
+    margin: 100px 200px;
+}
+.chessboard_inner_container{
+    padding: 20px;
+    margin-top: 5px;
+}
+.box{
+    width: 55px;
+    height: 55px;
+    border: 1px solid white;
+    margin-left: -1px;
+    
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.live-stats{
+    width: 450px;
+    height: 200px;
+    border-radius: 30px;
+    margin: -500px 750px;
+}
+.chess_table_title{
+    font-size: 1.2rem;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.bullet{
+    border:2px solid white;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.blitz{
+    border:2px solid white;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.rapid{
+    border:2px solid white;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.col{
+    display: flex;
+    flex-direction: column;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+}
+.white{
+    background-color: white;
+}
+
+.projects{
+    display: block;
+    visibility: visible;
+    width: 100%;
+    height: 100vh;
+    position:absolute;
+    top: 300vh;
+    left: 0;
+    margin: 0 auto;
+    transition: transform 1s ease-in-out;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.projects_r {
+    position: absolute;
+    top: 50%;
+    left: 96.5%;
+    transform: translate(-50%, -50%);
+    transform: rotate(270deg);
+    cursor: pointer;
+}
+
+.projects_r span {
+    display: block;
+    width: 1vw;
+    height: 1vw;
+    border-bottom: 3px solid white;
+    border-right: 3px solid white;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+
+.projects_r span:nth-child(2) {
+    animation-delay: -0.2s;
+}
+
+.projects_r span:nth-child(3) {
+    animation-delay: -0.4s;
+}
+
+
+.projects_l {
+    position: absolute;
+    top: 50%;
+    left: 3.5%;
+    transform: translate(-50%, -50%);
+    transform: rotate(90deg);
+    cursor: pointer;
+}
+
+.projects_l span {
+    display: block;
+    width: 1vw;
+    height: 1vw;
+    border-bottom: 3px solid white;
+    border-right: 3px solid white;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+
+.projects_l span:nth-child(2) {
+    animation-delay: -0.2s;
+}
+
+.projects_l span:nth-child(3) {
+    animation-delay: -0.4s;
+}
+
+.projects_u {
+    position: absolute;
+    top: 7%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform: rotate(180deg);
+    cursor: pointer;
+}
+
+.projects_u span {
+    display: block;
+    width: 1vw;
+    height: 1vw;
+    border-bottom: 3px solid white;
+    border-right: 3px solid white;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+
+.projects_u span:nth-child(2) {
+    animation-delay: -0.2s;
+}
+
+.projects_u span:nth-child(3) {
+    animation-delay: -0.4s;
+}
+
+
+
+.projects_b {
+    position: absolute;
+    top: 91.5%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+    transform: rotate(0deg);
+    cursor: pointer;
+}
+
+.projects_b span {
+    display: block;
+    width: 1vw;
+    height: 1vw;
+    border-bottom: 3px solid white;
+    border-right: 3px solid white;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+
+.projects_b span:nth-child(2) {
+    animation-delay: -0.2s;
+}
+
+.projects_b span:nth-child(3) {
+    animation-delay: -0.4s;
+}
