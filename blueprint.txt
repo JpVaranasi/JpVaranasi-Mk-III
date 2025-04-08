@@ -28,7 +28,7 @@ okay so pages that at initial idea would be are:
 5. guitar(playable guitar??) - try to add a feature where it autoplays your fav song with the relevant chords/strings lighting up when used.
 6. certifications 
 7. Cricket (start maintaining full stats)
-8. 
+8. photography
 
 
 
@@ -39,4 +39,21 @@ I think we need to have dynamic links in place, where when an arrow is clicked i
 okay so for the projects page, its gonna be a game where you are in a rocket, you use wasd and head to HQ base. where you can choose between options like python,html/css and formula student, im looking the biger picture where in the future im gonna have projects in different languages so that will only increase in size, as of now its gonna be 3. After selecting a option, each of which will have a different ship, you can shoot/destroy obstacles like we did with the gamemaker ones, you can also add gamemaker as  section or like others. Anyways, once you select an option you have to defeat the obstacles and after which you will arrive at the section specific HQ3 (for eg) and that will show all L3 projects and you will refuel ship and you will once again head out in search of HQ2, maybe not make all to be above and have a x and y coordinate, anyways yeah the distance to HQ2 from HQ3 will be larger than the distance from HQ base to HQ3 and repeat for HQ1. After which you get to warp travel to base. Now I think about it I wanna add different games for different sections, like the spaceship for one, a driving one where you can drive to different projects and have a look and after you're done you can head back to base. And other one mayb something like playing another game or summin like that. 
 
 *** one thing to make sure tho is that they don't feel too long, the games themselves ***
+
+
+for the photography page add the cool slider that hyperplex taught
+
+download fonts into assets to make it better in terms of locally running
+
+fix the visibility bugs on reload.
+
+
+
+add some sort of particle animations ideally interactive on the home page. 
+
+
+good ui
+snappy animations
+less cluttery 
+
 

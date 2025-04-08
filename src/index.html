@@ -83,6 +83,8 @@
             <script type="text/javascript">
                 if (window.location.href.indexOf("skills") != -1){
                     document.getElementById('index').style.visibility = "hidden";
+                    document.getElementById('skills-car').style.animation = "carAnim";
+                    document.getElementById('skills-car').style.animationDuration = "0.5s";
                 }
             </script>
             <!--add a font to make it look like f1, have standings like p1,p2, upto p5 or so-->
@@ -154,7 +156,7 @@
                     <div class="bar-3"></div>
                 </div>
             </div>
-            <img src="image-removebg-preview.png" alt="s" width="25%">
+            <img src="image-removebg-preview.png" id="skills-car class="skills-car" alt="s" width="25%" draggable="false">
             <img src="" alt="">
         </div>
         <div class="chess" id="chess">
@@ -331,6 +333,60 @@
         <div class="guitar"></div>
         <div class="certs"></div>
         <div class="cricket"></div>
-    <script src="script.js"></script> 
+        <div class="photography" id="photography">
+            <script type="text/javascript">
+                if (window.location.href.indexOf("photography") != -1){
+                    document.getElementById('index').style.visibility = "hidden";
+                    document.getElementById('skills').style.visibility = "hidden";
+                    document.getElementById('chess').style.visibility = "hidden";
+                    document.getElementById('photography').style.visibility = "visible";
+                }
+            </script>
+            <!--add a font to make it look like f1, have standings like p1,p2, upto p5 or so-->
+            <a href="#index" onclick="revealIndex()">
+                <div class="photography_u">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </a>
+            <a href="" onclick="controlCenter();return false;">
+            <div class="photography_l" >
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            </a>
+            <a href="" onclick="controlCenter();return false;">
+            <div class="photography_r">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            </a>
+            <a href="" onclick="controlCenter();return false;">
+            <div class="photography_b">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            </a> 
+            <div class="image-track-container">
+                <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
+                    <img class="image" src="https://images.unsplash.com/photo-1524781289445-ddf8f5695861?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" draggable="false" />
+                    <img class="image" src="https://images.unsplash.com/photo-1610194352361-4c81a6a8967e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80" draggable="false" />
+                    <img class="image" src="https://images.unsplash.com/photo-1618202133208-2907bebba9e1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" draggable="false" />
+                    <img class="image" src="https://images.unsplash.com/photo-1495805442109-bf1cf975750b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" draggable="false" />
+                    <img class="image" src="https://images.unsplash.com/photo-1548021682-1720ed403a5b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" draggable="false" />
+                    <img class="image" src="https://images.unsplash.com/photo-1496753480864-3e588e0269b3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2134&q=80" draggable="false" />
+                    <img class="image" src="https://images.unsplash.com/photo-1613346945084-35cccc812dd5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1759&q=80" draggable="false" />
+                    <img class="image" src="https://images.unsplash.com/photo-1516681100942-77d8e7f9dd97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" draggable="false" />
+                  </div>
+                  <script src="photography.js"></script>
+            </div>
+            
+
+        </div>
+        <script src="script.js"></script> 
     </body>
 </html>

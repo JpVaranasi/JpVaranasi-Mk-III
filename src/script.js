@@ -1,4 +1,4 @@
-let arr = ["projects", "chess", "guitar", "certifications", "cricket"];
+let arr = ["projects", "chess", "guitar", "certifications", "cricket","photography"];
 sessionStorage.setItem('savedList', JSON.stringify(arr));
 
 function controlCenter() {
