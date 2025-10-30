@@ -30,34 +30,59 @@ a{
 }
 html{
     scroll-behavior: smooth;
+    font-size: clamp(14px, 0.9vw, 18px);
+
 }
 *::selection{
     background-color: white;
     color: #1A1A1D;
 }
 body{
-    font-size: 1rem;
+font-size: clamp(0.5rem, 1rem, 2rem);
     margin: 0 auto;
     background-color: #1A1A1D;
     color: white;
     overflow: hidden;
+    transition: transform 0.5s ease; /* smooth zoom */
+    transform-origin:top center;
 }
+
+h1, h2, h3 {
+  font-weight: 700;
+}
+
+
+
+p {
+  font-size: clamp(1rem, 1vw, 1.25rem);
+}
+
+.zoomed-out {
+      transform: scale(0.20) translateX(-150px); 
+        transform-origin: 22vw 100px /* ensures movement is predictable */
+/* 80% zoom */
+    }
+
 .index{
     display: block;
     width: 100%;
     height: 100vh;
     margin: 0 auto;
-    position: fixed;
+    position: absolute;
     top: 0;
-    left:0;
+    left:100vw;
     overflow: hidden;
     transition: transform 1s ease-in-out;
+    border-left: white solid 4px;
+    border-top:  white solid 4px;
+    border-right:  white solid 4px;
+
 }
 .index-title{
     font-family: "Kalam", serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 3.5rem, 4rem);
     width: fit-content;
     margin: 100px auto;
     color: white;
@@ -68,7 +93,7 @@ body{
 
                 .index_b{
                     width: 20px;
-                    margin: 200px auto;
+                    margin: 13vh auto;
                 }
                 .index_b_arrows
                 {
@@ -261,7 +286,7 @@ body{
 .skills_b {
     position: absolute;
     top: 91.5%;
-    left: 51%;
+    left: 50%;
     transform: translate(-50%, -50%);
     transform: rotate(0deg);
     cursor: pointer;
@@ -353,61 +378,73 @@ to {
 }
 .skills{
     display: block;
-    visibility: visible;
+    visibility: hidden;
     width: 100%;
     height: 100vh;
     position:absolute;
-    top: 100vh;
-    left: 0;
+    top: 0;
+    left: 100vw;
     margin: 0 auto;
     transition: transform 1s ease-in-out;
     font-family: "Orbitron", serif;
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
+    border-right: white solid 4px;
+}
+.skills_bar{
+    width: 40vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 10vw;
+    margin-top: 10vh;
 }
 .python{
     display: flex;
     flex-direction: wrap;
     width: 375px;
     justify-content: space-between;
-    margin: 200px 200px;
 }
 .html_css{
     display: flex;
     flex-direction: wrap;
     width: 375px;
     justify-content: space-between;
-    margin: -150px 200px;   
 }
 .cpp{
     display: flex;
     flex-direction: wrap;
     width: 375px;
     justify-content: space-between;
-    margin: 200px 200px;   
 }
-.js{
+.django{
     display: flex;
     flex-direction: wrap;
     width: 375px;
     justify-content: space-between;
-    margin: -150px 200px; 
 }
 .gml{
     display: flex;
     flex-direction: wrap;
     width: 375px;
     justify-content: space-between;
-    margin: 200px 200px; 
+}
+.js{
+    display: flex;
+    flex-direction: wrap;
+    width: 375px;
+    justify-content: space-between;
 }
 .skills-car{
     z-index: 999999999;
     animation-delay: 0.5s;
+    margin: 100vh;
 }
 @keyframes carAnim{
-    0% {margin: -425px 1600px;}
-    100% {margin: -425px 800px;}       
+    0% {margin: 50vh 200vw}
+    100% {margin:100vh 70vw}       
 }
 .skill-bar{
     width: 243px;
@@ -452,18 +489,18 @@ to {
     z-index:0;
 }
 .skills img{
-    margin: -425px 800px;
+    margin: -25vw 124vh;
     z-index: 99999999999;
 }
 /* okay so the problem is with the top being displaced and the position being fixed, they both seem to be clashing. also try to download the font for it to work "offline". */
 
 .chess{
     display: block;
-    visibility: visible;
+    visibility: hidden;
     width: 100%;
     height: 100vh;
     position:absolute;
-    top: 200vh;
+    top: 0;
     left: 0;
     margin: 0 auto;
     transition: transform 1s ease-in-out;
@@ -476,8 +513,9 @@ to {
 
 
 .chess_r {
+    visibility: hidden;
     position: absolute;
-    top: 50%;
+    top: 48.5%;
     left: 96.5%;
     transform: translate(-50%, -50%);
     transform: rotate(270deg);
@@ -533,6 +571,7 @@ to {
 }
 
 .chess_u {
+    visibility:hidden;
     position: absolute;
     top: 7%;
     left: 50%;
@@ -565,7 +604,7 @@ to {
 .chess_b {
     position: absolute;
     top: 91.5%;
-    left: 51%;
+    left: 50%;
     transform: translate(-50%, -50%);
     transform: rotate(0deg);
     cursor: pointer;
@@ -590,15 +629,14 @@ to {
     animation-delay: -0.4s;
 }
 .chess_container{
-    font-size: 2rem;
-    
+font-size: clamp(0.5rem, 2rem, 3rem);    
 }
 .chessboard_container{
-    width: 500px;
-    height: 490px;
+    width: 35vw;
+    height: 70vh;
     border-radius: 30px;
     border: 3px white solid;
-    margin: 100px 200px;
+    margin: 20vh 15vw;
 }
 .chessboard_inner_container{
     padding: 20px;
@@ -618,13 +656,13 @@ to {
 
 }
 .live-stats{
-    width: 450px;
-    height: 200px;
+    width: 35vw;
+    height: 25vh;
     border-radius: 30px;
-    margin: -500px 750px;
+    margin: -75vh 55vw;
 }
 .chess_table_title{
-    font-size: 1.2rem;
+font-size: clamp(0.5rem, 1.2rem, 1.7rem);
     padding-left: 20px;
     padding-right: 20px;
     padding-left: 20px;
@@ -632,14 +670,14 @@ to {
 .bullet{
     border:2px solid white;
     border-radius: 10px;
-    font-size: 1.2rem;
+font-size: clamp(0.5rem, 1.2rem, 1.7rem);
     padding-left: 20px;
     padding-right: 20px;
 }
 .blitz{
     border:2px solid white;
     border-radius: 10px;
-    font-size: 1.2rem;
+font-size: clamp(0.5rem, 1.2rem, 1.7rem);
     margin-top: 10px;
     padding-left: 20px;
     padding-right: 20px;
@@ -647,7 +685,7 @@ to {
 .rapid{
     border:2px solid white;
     border-radius: 10px;
-    font-size: 1.2rem;
+font-size: clamp(0.5rem, 1.2rem, 1.7rem);
     margin-top: 10px;
     padding-left: 20px;
     padding-right: 20px;
@@ -666,18 +704,19 @@ to {
 
 .projects{
     display: block;
-    visibility: visible;
+    visibility: hidden;
     width: 100%;
     height: 100vh;
     position:absolute;
-    top: 300vh;
-    left: 0;
+    top: 0;
+    left: 100vw;
     margin: 0 auto;
     transition: transform 1s ease-in-out;
     font-family: "Montserrat", serif;
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
+    border-right:  white solid 4px;
 }
 
 .projects_r {
@@ -770,7 +809,7 @@ to {
 .projects_b {
     position: absolute;
     top: 91.5%;
-    left: 51%;
+    left: 50%;
     transform: translate(-50%, -50%);
     transform: rotate(0deg);
     cursor: pointer;
@@ -803,7 +842,10 @@ to {
 
 
 
-
+.projExtLink:hover{
+    color: #1A1A1D;
+    background-color: white;;
+}
 
 
 
@@ -823,11 +865,11 @@ to {
 
 .photography{
     display: block;
-    visibility: visible;
+    visibility: hidden;
     width: 100%;
     height: 100vh;
     position:absolute;
-    top: 400vh;
+    top: 200vh;
     left: 0;
     margin: 0 auto;
     transition: transform 1s ease-in-out;
@@ -844,6 +886,7 @@ to {
     transform: translate(-50%, -50%);
     transform: rotate(270deg);
     cursor: pointer;
+    visibility:hidden;
 }
 
 .photography_r span {
@@ -895,6 +938,7 @@ to {
 }
 
 .photography_u {
+    visibility: hidden;
     position: absolute;
     top: 7%;
     left: 50%;
@@ -927,7 +971,7 @@ to {
 .photography_b {
     position: absolute;
     top: 91.5%;
-    left: 51%;
+    left: 50%;
     transform: translate(-50%, -50%);
     transform: rotate(0deg);
     cursor: pointer;
@@ -954,23 +998,668 @@ to {
 
 
 .image-track-container{
-    height: 90vh;
-    width: 90vw;
+    height: 25vh;
+    width: 25vw;
     margin: auto;
+    position:absolute;
+    top:0;
+    left: 0;
+    
 }
 #image-track {
   display: flex;
   gap: 4vmin;
   position: absolute;
-  left: 50%;
-  top: 50%;
+  left: 0%;
+  top: 0%;
   transform: translate(0%, -50%); 
   user-select: none; /* -- Prevent image highlighting -- */
 }
 
-#image-track > .image {
-  width: 20vmin;
-  height: 28vmin;
-  object-fit: cover;
-  object-position: 100% center;
+
+
+
+.certs{
+    display: block;
+    visibility: hidden;
+    width: 100%;
+    height: 100vh;
+    position:absolute;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    transition: transform 1s ease-in-out;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.certs_b {
+    visibility: hidden;
+    position: absolute;
+    top: 91.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform: rotate(0deg);
+    cursor: pointer;
+}
+
+.certs_b span {
+    display: block;
+    width: 1vw;
+    height: 1vw;
+    border-bottom: 3px solid white;
+    border-right: 3px solid white;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+
+.certs_b span:nth-child(2) {
+    animation-delay: -0.2s;
+}
+
+.certs_b span:nth-child(3) {
+    animation-delay: -0.4s;
+}
+
+
+.certs_r {
+    visibility: hidden;
+    position: absolute;
+    top: 49%;
+    left: 96.5%;
+    transform: translate(-50%, -50%);
+    transform: rotate(270deg);
+    cursor: pointer;
+    z-index: 1;
+}
+
+.certs_r span {
+    display: block;
+    width: 1vw;
+    height: 1vw;
+    border-bottom: 3px solid white;
+    border-right: 3px solid white;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+
+.certs_r span:nth-child(2) {
+    animation-delay: -0.2s;
+}
+
+.certs_r span:nth-child(3) {
+    animation-delay: -0.4s;
+}
+
+.experience{
+    display: block;
+    visibility: hidden;
+    width: 100%;
+    height: 100vh;
+    position:absolute;
+    top: 200vh;
+    left: 0;
+    margin: 0 auto;
+    transition: transform 1s ease-in-out;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.experience_r {
+    visibility: hidden;
+    position: absolute;
+    top: 48.5%;
+    left: 96.5%;
+    transform: translate(-50%, -50%);
+    transform: rotate(270deg);
+    cursor: pointer;
+}
+
+.experience_r span {
+    display: block;
+    width: 1vw;
+    height: 1vw;
+    border-bottom: 3px solid white;
+    border-right: 3px solid white;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+
+.experience_r span:nth-child(2) {
+    animation-delay: -0.2s;
+}
+
+.experience_r span:nth-child(3) {
+    animation-delay: -0.4s;
+}
+
+
+.experience_b {
+    visibility: hidden;
+    position: absolute;
+    top: 91.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform: rotate(0deg);
+    cursor: pointer;
+}
+
+.experience_b span {
+    display: block;
+    width: 1vw;
+    height: 1vw;
+    border-bottom: 3px solid white;
+    border-right: 3px solid white;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+
+.experience_b span:nth-child(2) {
+    animation-delay: -0.2s;
+}
+
+.experience_b span:nth-child(3) {
+    animation-delay: -0.4s;
+}
+
+
+
+.image {
+width: 40vmin;
+position: absolute;
+transform: translate(-50%, -50%);
+}
+
+.image[data-status="inactive"] {
+display: none;
+}
+
+.image[data-status="active"] {
+display: block;
+}
+
+
+.cli{
+    display: block;
+    visibility: hidden;
+    width: 100%;
+    height: 100vh;
+    position:absolute;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    transition: transform 1s ease-in-out;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+.cli_l {
+    position: absolute;
+    top: 50%;
+    left: 3.5%;
+    transform: translate(-50%, -50%);
+    transform: rotate(90deg);
+    cursor: pointer;
+}
+
+.cli_l span {
+    display: block;
+    width: 1vw;
+    height: 1vw;
+    border-bottom: 3px solid white;
+    border-right: 3px solid white;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+
+.cli_l span:nth-child(2) {
+    animation-delay: -0.2s;
+}
+
+.skills_l span:nth-child(3) {
+    animation-delay: -0.4s;
+}
+
+
+.finalCard{
+    display: block;
+    visibility: hidden;
+    width: 100%;
+    height: 100vh;
+    position:absolute;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    transition: transform 1s ease-in-out;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.dot-card{
+    position: absolute;
+    top: 200vh;
+    left: -100vw;
+}
+.circle-dot{
+    width: 80vh;
+    height: 80vh;
+    position: absolute;
+    top: 5vw;
+    right: -75vw;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.podium{
+    position: relative;
+    top:5vw;
+    left:20vw;
+    height:60vh;
+    width: 60vw; 
+    display:flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap:2vw
+}
+.projectOne{
+
+}
+.projectTwo{
+
+}
+.projectThree{
+
+}
+.cardProjectOne{
+    border:2px solid white;
+    border-radius: 30px;
+    height: 40vh;
+    width:20vw;
+    margin-bottom:1vw
+}
+.cardProjectTwo{
+    border:2px solid white;
+    border-radius: 30px;
+    height: 45vh;
+    width:20vw;
+    margin-bottom:1vw
+}
+.cardProjectThree{
+    border:2px solid white;
+    border-radius: 30px;
+    height: 35vh;
+    width:20vw;
+    margin-bottom:1vw
+}
+.baseProjectOne{
+    align-content: center;
+    width:20vw;
+    height:7vh;
+    border:3px solid white;
+    border-radius: 40px;
+}
+.baseProjectTwo{
+    color:white;
+    align-content: center;
+    isolation: isolate; 
+    margin: auto;
+    width:20vw;
+    height:9vh;
+    border:3px solid white;
+    border-radius: 40px;
+    position: relative;
+    overflow:hidden;
+    transition: color 0.3s;
+}
+
+
+.baseProjectTwo::before{
+  content:"";
+  position:absolute;
+  left:0; top:0;
+  width:0; height:100%;
+  background:white;
+  mix-blend-mode:difference;
+  z-index:2;                 /* <- MUST be above the text */
+  pointer-events:none;
+  transition:width .35s ease;
+}
+
+.baseProjectTwo:hover::before {
+  width: 90%; /* highlight up to this percent */
+}
+
+.baseProjectTwo * {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+
+.baseProjectThree{
+    align-content: center;
+    width:20vw;
+    height:6vh;
+    border:3px solid white;
+    border-radius: 40px;
+}
+
+.githubExtProj{
+    color:white;
+    background: transparent;
+    width: clamp(140px, 10vw, 400px);
+    height:7vh;
+    border:2px solid white;
+    border-radius:30px;
+    margin:auto;
+    display:flex;
+    flex-direction: row;
+    padding: 20px;
+    justify-content: space-between;
+    align-items:center;
+}
+.githubExtProj:hover{
+    background-color: white;
+    color:black;
+
+}
+
+.managerExtProj{
+    color:white;
+    background: transparent;
+    width: clamp(200px, 16vw, 600px);
+    height:7vh;
+    border:2px solid white;
+    border-radius:30px;
+    margin:auto;
+    display:flex;
+    flex-direction: row;
+    padding: 20px;
+    justify-content: space-between;
+    align-items:center;
+}
+.managerExtProj:hover{
+    background-color: white;
+    color:black;
+
+}
+.projExtContainer{
+    display: flex;
+    flex-direction: row;
+    gap:2vw;
+    position: relative;
+    top:15vh;
+    margin: 0 auto;
+    width:22vw;
+    height:7vh;
+}
+.githubExtProjcontainer{
+    width: 16vw;
+}
+
+
+.linksIndex{
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    margin:0 auto;
+    margin-top: 10vh;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.thank-you{
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+font-size: clamp(3rem, 5rem, 7rem);
+    width: fit-content;
+    margin: 10vh auto;
+
+}
+.contact-container{
+ width: fit-content;
+ margin: 0 auto;
+ text-align: center;
+}
+#final{
+    background-color: transparent;
+    border: 5px white solid;
+    width: min-content;
+font-size: clamp(2rem, 3em, 4rem);
+    border-radius: 50%;
+    margin: 10vh auto;
+    color: white;
+}
+
+.certificate{
+    width: 11vw;
+    height: 13vw;
+    margin: 0 auto;
+    border-left: 2px solid white;
+    border-bottom-left-radius: 25%;
+    border-top-right-radius: 25%;
+    border-style: solid;
+    position: relative;
+}
+.certs-display{
+    width: 30vw;
+    height: 30vh;
+    margin: 40vh auto;
+    display: flex;
+    flex-direction: row;
+}
+.cert_desc{
+font-size: clamp(0.5rem, 0.8rem, 1rem);
+    padding-left: 10px;
+    z-index: 9999;
+    height: 7vh;
+
+}
+
+.experience-container{
+    width: 80vw;
+    height: 70vh;
+    border: 2px solid white;
+    border-radius: 30px;
+    margin: 10vh auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.education{
+    width:45%;
+    margin-top:2.5%; 
+    height: 90%;
+    border:2px solid white;
+    border-radius: 30px;
+font-size: clamp(0.3rem, 0.5rem, 0.8rem);
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.work{
+    width:45%;
+    margin-top:2.5%; 
+    height: 90%;
+    border-radius: 30px;
+font-size: clamp(0.3rem, 0.5rem, 0.8rem);
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.cli-container{
+    width: 85vw;
+    height: 90vh;
+    margin: 5vh auto;
+    background-color: black;
+    color: green;
+    border-radius: 30px;
+}
+#terminal {
+  background-color: #000;
+  color: #0f0;
+  font-family: monospace;
+  height: 80vh;
+  width: 80vw;
+  margin: auto;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow-y: auto;
+}
+
+#output {
+  white-space: pre-wrap;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+input {
+    background: black; /* or your CLI bg */
+    color: white;
+    caret-color: white;
+}
+
+#input-line {
+  display: flex;
+  align-items: center;
+}
+
+.prompt {
+  color: #0f0;
+  margin-right: 5px;
+}
+
+#command {
+  background: none;
+  border: none;
+  color: #0f0;
+  font-family: monospace;
+font-size: clamp(0.5rem, 1rem, 2rem);
+  outline: none;
+  width: 100%;
+}
+.projectIntTitle{
+    width: fit-content;
+    margin: 3vh auto;
+}
+.projectStack{
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    position: relative;
+    top: 5vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+.projDesc{
+font-size: clamp(0.5rem, 0.8rem, 1rem);
+    margin-left: 1vw;
+}
+.project2Stack{
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    position: relative;
+    top: 8vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+.project3Stack{
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    position: relative;
+    top: 1vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left:1vw;
+}
+.row3{
+    display: flex;
+    flex-direction: row;
+    
+}
+.col{
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+    
+}
+
+.uni{
+    height: 30%;
+}
+.high-school{
+    height:30%;
+}
+.middle-school{
+    height: 30%;
+}
+.col2{
+    display: flex;
+    flex-direction: column;
+}
+.col2 + .col2{
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+.exp_edu_container{
+    border-top: 2px white dotted;
+}
+
+.greenCircle{
+    width: 1vw;
+    height: 1vw;
+    border-radius: 50%;
+    background-color: green;
+    margin-left: 1vw;
+    margin-top: 0.2vh;
+   
+}
+.red{
+    width: 1vw;
+    height: 1vw;
+    border-radius: 50%;
+    background-color: red;
+    margin-left: 1vw;
+    margin-top: 0.2vh;
+}
+.row2{
+    display: flex;
+    flex-direction: row;
+}
+.certs-key{
+    width: 10vw;
+    height: 5vh;
+    position: absolute;
+    top: 90vh;
+    left: 5vw;
 }

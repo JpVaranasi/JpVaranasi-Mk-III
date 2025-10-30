@@ -25,11 +25,11 @@ okay so pages that at initial idea would be are:
 2. projects 
 3. skills (f1) 
 4. chess (game area of left hand side and live stats from chess.com)
-5. guitar(playable guitar??) - try to add a feature where it autoplays your fav song with the relevant chords/strings lighting up when used.
+5. experience 
 6. certifications 
 7. Cricket (start maintaining full stats)
 8. photography
-
+9. journey finish.
 
 
 okay so to monitor what pages need to be rendered with each arrow,
@@ -57,3 +57,91 @@ snappy animations
 less cluttery 
 
 
+okay game changing idea - instead of having the random thing, we will guide it through and it we then zoom out to show 
+
+JP.
+
+okay so there are going to be: 
+
+down : 3
+right: 2
+left : 2
+up   : 1
+
+
+there are going to be 9 pages, the new page would be a end of journey kinda page. the good thing is, this design is easily scalable so yh.
+
+
+okay 1st down is skills
+2nd down is projects
+3rd down is finish page
+
+1st left is certifications
+2nd left is chess
+
+1st right is guitar
+2nd right is photography
+
+1st up is cricket
+    0  100 2 300    vw
+  0    x  
+100    x   x x
+200  x x   x x
+300        x  
+vh
+
+vw/vh config
+
+index : 0,100vw 
+
+down : 
+100vh/200vh + 100vw
+
+left :
+200vh 0vw / 0vh/300vw
+
+up: 
+0vh 300vw
+
+right:
+200vh/vw / 100vh 300vw
+
+
+
+// update > 9/25
+
+so at this stage we are at a stage where we have finalised the design, so we got 9 pages we direct them to a certain direction nswe with curated random 'slides' and on the final page there is a thank you, and then a button which when clicked zooms out to reveal '.Jp' by the pages which would still be functional 
+
+the next step would be to finalise what the content of the pages should be 
+
+1.index - intro
+2.skills - f1 based skills meter with f1 car 
+3.projects - a podium depicting current/prev/future projects 3 and links to full projects/github
+4.certs - 
+5.experience
+6.playable chess game with live stats (chess game needs to be made)
+7.photography - need to decide what presentation method
+8.cricket - need to decide on wether to keep page/presentation options 
+9. thank you page.
+
+
+done(framework) --
+
+index
+skills
+projects
+photography
+
+done(fully)
+
+index
+skills
+
+
+to be done - 
+
+certs 
+experience
+chess
+cricket
+thank you 
