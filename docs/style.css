@@ -1340,7 +1340,7 @@ display: block;
 }
 
 .baseProjectTwo:hover::before {
-  width: 90%; /* highlight up to this percent */
+  width: 10%; /* highlight up to this percent */
 }
 
 .baseProjectTwo * {
